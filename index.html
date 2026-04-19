@@ -42,6 +42,7 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
             padding: 24px;
             overflow: hidden;
+            margin-bottom: 24px;
         }
         .section-title {
             margin-top: 0;
@@ -130,6 +131,34 @@
         .card-action a:hover {
             background: #a94f17;
         }
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 8px;
+        }
+        .report-table {
+            width: 100%;
+            min-width: 720px;
+            border-collapse: collapse;
+            margin-top: 12px;
+            background: white;
+        }
+        .report-table th,
+        .report-table td {
+            border: 1px solid #e8e8e8;
+            padding: 12px 14px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .report-table th {
+            background: #c45d1b;
+            color: white;
+        }
+        .report-table tr:nth-child(even) {
+            background: #fafafa;
+        }
         footer {
             text-align: center;
             color: #999;
@@ -153,6 +182,7 @@
             .card {
                 padding: 16px;
                 border-radius: 14px;
+                margin-bottom: 16px;
             }
             .section-title {
                 font-size: 1.5rem;
@@ -181,6 +211,14 @@
             }
             .card-action a {
                 padding: 12px 14px;
+            }
+            .report-table {
+                min-width: 680px;
+            }
+            .report-table th,
+            .report-table td {
+                font-size: 0.92rem;
+                padding: 10px 12px;
             }
         }
     </style>
@@ -387,6 +425,52 @@
         </div>
     
             </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">季度報表總覽</h2>
+            
+<div class="table-wrap">
+<table class="report-table quarter-table">
+    <thead>
+        <tr>
+            <th>季度</th>
+            <th>總銷售額</th>
+            <th>總單數</th>
+            <th>平均每單金額</th>
+            <th>最高營業額日期</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>2026 Q2</td>
+            <td>HKD 21361.9</td>
+            <td>105</td>
+            <td>HKD 203.45</td>
+            <td>2026-04-12（HKD 5217.80）</td>
+        </tr>
+    
+        <tr>
+            <td>2026 Q1</td>
+            <td>HKD 24063.2</td>
+            <td>108</td>
+            <td>HKD 222.81</td>
+            <td>2026-03-29（HKD 3927.80）</td>
+        </tr>
+    
+        <tr>
+            <td>2025 Q4</td>
+            <td>HKD 19704.0</td>
+            <td>81</td>
+            <td>HKD 243.26</td>
+            <td>2025-12-01（HKD 2666.00）</td>
+        </tr>
+    
+    </tbody>
+</table>
+</div>
+
         </section>
     </main>
 
