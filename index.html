@@ -31,6 +31,23 @@
             margin: 8px 0 0 0;
             font-weight: 400;
         }
+        .header-logo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .header-logo {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .last-updated {
+            margin: 12px 0 0 0;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.92);
+        }
         main {
             max-width: 1200px;
             margin: 24px auto;
@@ -50,15 +67,12 @@
             color: #2d3748;
             font-size: 1.8rem;
         }
-
-        /* Desktop table / Mobile card switching */
         .desktop-only {
             display: block;
         }
         .mobile-only {
             display: none;
         }
-
         .month-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -140,7 +154,6 @@
         .card-action a:hover {
             background: #a94f17;
         }
-
         .table-wrap {
             width: 100%;
             overflow-x: auto;
@@ -177,14 +190,12 @@
         .report-table a:hover {
             text-decoration: underline;
         }
-
         footer {
             text-align: center;
             color: #999;
             font-size: 0.9rem;
             padding: 20px 0 40px 0;
         }
-
         @media (max-width: 768px) {
             .desktop-only {
                 display: none;
@@ -192,7 +203,6 @@
             .mobile-only {
                 display: block;
             }
-
             header {
                 padding: 24px 12px;
             }
@@ -201,6 +211,12 @@
             }
             header h2 {
                 font-size: 1.15rem;
+            }
+            .header-logo {
+                max-width: 120px;
+            }
+            .last-updated {
+                font-size: 0.88rem;
             }
             main {
                 margin: 16px auto;
@@ -252,9 +268,13 @@
 </head>
 <body>
     <header>
+        <div class="header-logo-wrap">
+            <img src="logo.png" alt="PAWFECT Logo" class="header-logo">
+        </div>
         <h1>毛添加有限公司</h1>
         <h2>PAWFECT PET LIMITED</h2>
         <h2>月報首頁</h2>
+        <p class="last-updated">Last updated: 2026-04-20 00:17</p>
     </header>
 
     <main>
