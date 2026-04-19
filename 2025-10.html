@@ -17,38 +17,42 @@
             margin: 0;
             padding: 0;
         }
-        header {
-            background: linear-gradient(135deg, #c45d1b, #e98b3a);
-            color: white;
-            text-align: center;
-            padding: 20px 16px 18px 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        header h2 {
-            margin: 8px 0 0 0;
-            font-weight: 400;
-        }
-        .header-logo-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        .header-logo {
-             max-width: 110px;
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .last-updated {
-            margin: 12px 0 0 0;
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.92);
-        }
+        
+header {
+    background: linear-gradient(135deg, #c45d1b, #e98b3a);
+    color: white;
+    text-align: center;
+    padding: 20px 16px 18px 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+header h2 {
+    margin: 6px 0 0 0;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.header-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.header-logo {
+    max-width: 110px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.last-updated {
+    margin: 10px 0 0 0;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.92);
+}
+
         main {
             max-width: 1300px;
             margin: 24px auto;
@@ -173,25 +177,6 @@
             }
         }
         @media (max-width: 768px) {
-            header {
-                padding: 16px 12px 14px 12px;
-            }
-            header h1 {
-                font-size: 1.5rem;
-            }
-            header h2 {
-                font-size: 1.05rem;
-            }
-            .header-logo {
-                max-width: 82px;
-            }
-            .header-logo-wrap {
-                margin-bottom: 6px;
-            }
-            .last-updated {
-                font-size: 0.8rem;
-                margin-top: 8px;
-            }
             main {
                 margin: 16px auto;
                 padding: 0 12px 28px 12px;
@@ -219,6 +204,29 @@
                 padding: 9px 10px;
             }
         }
+        
+@media (max-width: 768px) {
+    header {
+        padding: 16px 12px 14px 12px;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header h2 {
+        font-size: 1.05rem;
+    }
+    .header-logo {
+        max-width: 82px;
+    }
+    .header-logo-wrap {
+        margin-bottom: 6px;
+    }
+    .last-updated {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -229,7 +237,7 @@
         <h1>毛添加有限公司</h1>
         <h2>PAWFECT PET LIMITED</h2>
         <h2>2025-10 月度銷售報表</h2>
-        <p class="last-updated">Last updated: 2026-04-20 00:23</p>
+        <p class="last-updated">Last updated: 2026-04-20 00:26</p>
     </header>
 
     <main>
@@ -262,7 +270,7 @@
         <section class="card">
             <h2>重點分析</h2>
             <ul class="insight-list">
-                <li>最高營業額日期：2025-10-26（HKD 1075.20）</li><li>平均每日營業額：HKD 760.60</li><li>平均每單金額：HKD 134.22</li><li>數量最多商品：凍乾豬粒（4 件）</li><li>銷售額最高商品：凍乾豬粒（HKD 392.00）</li><li>數量最多分類：海產（7 件）</li><li>銷售額最高分類：海產（HKD 906.00）</li>
+                <li>最高營業額日期：2025-10-26（HKD 1,075.20）</li><li>平均每日營業額：HKD 760.60</li><li>平均每單金額：HKD 134.22</li><li>數量最多商品：凍乾豬粒（4 件）</li><li>銷售額最高商品：凍乾豬粒（HKD 392.00）</li><li>數量最多分類：海產（7 件）</li><li>銷售額最高分類：海產（HKD 906.00）</li>
             </ul>
         </section>
 
@@ -481,17 +489,17 @@
     <tr>
       <td>2025-10-25</td>
       <td>5</td>
-      <td>872.4</td>
+      <td>872.40</td>
     </tr>
     <tr>
       <td>2025-10-26</td>
       <td>9</td>
-      <td>1075.2</td>
+      <td>1,075.20</td>
     </tr>
     <tr>
       <td>2025-10-31</td>
       <td>3</td>
-      <td>334.2</td>
+      <td>334.20</td>
     </tr>
   </tbody>
 </table></div>
@@ -509,51 +517,51 @@
   <tbody>
     <tr>
       <td>凍乾豬粒</td>
-      <td>4.0</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>萬聖節手指/眼珠  I隻</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>凍乾海鱸魚</td>
-      <td>2.0</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>凍乾袋鼠肉</td>
-      <td>2.0</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>凍乾鹿肉</td>
-      <td>2.0</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>凍乾白飯魚</td>
-      <td>2.0</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>凍乾池魚仔</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>凍乾無激素雞柳粒</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>凍乾牛心</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>凍乾紅蝦</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>凍乾鱷魚肉</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>凍乾魷魚</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table></div>
@@ -571,51 +579,51 @@
   <tbody>
     <tr>
       <td>凍乾豬粒</td>
-      <td>392.0</td>
+      <td>392.00</td>
     </tr>
     <tr>
       <td>凍乾袋鼠肉</td>
-      <td>312.0</td>
+      <td>312.00</td>
     </tr>
     <tr>
       <td>凍乾鹿肉</td>
-      <td>312.0</td>
+      <td>312.00</td>
     </tr>
     <tr>
       <td>凍乾海鱸魚</td>
-      <td>216.0</td>
+      <td>216.00</td>
     </tr>
     <tr>
       <td>凍乾紅蝦</td>
-      <td>210.0</td>
+      <td>210.00</td>
     </tr>
     <tr>
       <td>凍乾鱷魚肉</td>
-      <td>200.0</td>
+      <td>200.00</td>
     </tr>
     <tr>
       <td>凍乾白飯魚</td>
-      <td>180.0</td>
+      <td>180.00</td>
     </tr>
     <tr>
       <td>凍乾魷魚</td>
-      <td>160.0</td>
+      <td>160.00</td>
     </tr>
     <tr>
       <td>凍乾池魚仔</td>
-      <td>140.0</td>
+      <td>140.00</td>
     </tr>
     <tr>
       <td>凍乾牛心</td>
-      <td>90.0</td>
+      <td>90.00</td>
     </tr>
     <tr>
       <td>凍乾無激素雞柳粒</td>
-      <td>86.0</td>
+      <td>86.00</td>
     </tr>
     <tr>
       <td>萬聖節手指/眼珠  I隻</td>
-      <td>45.0</td>
+      <td>45.00</td>
     </tr>
   </tbody>
 </table></div>
@@ -633,27 +641,27 @@
   <tbody>
     <tr>
       <td>海產</td>
-      <td>7.0</td>
+      <td>7</td>
     </tr>
     <tr>
       <td>其他</td>
-      <td>5.0</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>豬</td>
-      <td>4.0</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>萬聖節</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>牛</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>雞</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table></div>
@@ -671,27 +679,27 @@
   <tbody>
     <tr>
       <td>海產</td>
-      <td>906.0</td>
+      <td>906.00</td>
     </tr>
     <tr>
       <td>其他</td>
-      <td>824.0</td>
+      <td>824.00</td>
     </tr>
     <tr>
       <td>豬</td>
-      <td>392.0</td>
+      <td>392.00</td>
     </tr>
     <tr>
       <td>牛</td>
-      <td>90.0</td>
+      <td>90.00</td>
     </tr>
     <tr>
       <td>雞</td>
-      <td>86.0</td>
+      <td>86.00</td>
     </tr>
     <tr>
       <td>萬聖節</td>
-      <td>45.0</td>
+      <td>45.00</td>
     </tr>
   </tbody>
 </table></div>
@@ -715,97 +723,97 @@
       <td>p1</td>
       <td>凍乾豬粒</td>
       <td>豬</td>
-      <td>98.0</td>
-      <td>4.0</td>
-      <td>392.0</td>
+      <td>98.00</td>
+      <td>4</td>
+      <td>392.00</td>
     </tr>
     <tr>
       <td>o2</td>
       <td>凍乾袋鼠肉</td>
       <td>其他</td>
-      <td>156.0</td>
-      <td>2.0</td>
-      <td>312.0</td>
+      <td>156.00</td>
+      <td>2</td>
+      <td>312.00</td>
     </tr>
     <tr>
       <td>o3</td>
       <td>凍乾鹿肉</td>
       <td>其他</td>
-      <td>156.0</td>
-      <td>2.0</td>
-      <td>312.0</td>
+      <td>156.00</td>
+      <td>2</td>
+      <td>312.00</td>
     </tr>
     <tr>
       <td>s6</td>
       <td>凍乾海鱸魚</td>
       <td>海產</td>
-      <td>108.0</td>
-      <td>2.0</td>
-      <td>216.0</td>
+      <td>108.00</td>
+      <td>2</td>
+      <td>216.00</td>
     </tr>
     <tr>
       <td>s7</td>
       <td>凍乾紅蝦</td>
       <td>海產</td>
-      <td>210.0</td>
-      <td>1.0</td>
-      <td>210.0</td>
+      <td>210.00</td>
+      <td>1</td>
+      <td>210.00</td>
     </tr>
     <tr>
       <td>o4</td>
       <td>凍乾鱷魚肉</td>
       <td>其他</td>
-      <td>200.0</td>
-      <td>1.0</td>
-      <td>200.0</td>
+      <td>200.00</td>
+      <td>1</td>
+      <td>200.00</td>
     </tr>
     <tr>
       <td>s9</td>
       <td>凍乾白飯魚</td>
       <td>海產</td>
-      <td>90.0</td>
-      <td>2.0</td>
-      <td>180.0</td>
+      <td>90.00</td>
+      <td>2</td>
+      <td>180.00</td>
     </tr>
     <tr>
       <td>s8</td>
       <td>凍乾魷魚</td>
       <td>海產</td>
-      <td>160.0</td>
-      <td>1.0</td>
-      <td>160.0</td>
+      <td>160.00</td>
+      <td>1</td>
+      <td>160.00</td>
     </tr>
     <tr>
       <td>s10</td>
       <td>凍乾池魚仔</td>
       <td>海產</td>
-      <td>140.0</td>
-      <td>1.0</td>
-      <td>140.0</td>
+      <td>140.00</td>
+      <td>1</td>
+      <td>140.00</td>
     </tr>
     <tr>
       <td>cow3</td>
       <td>凍乾牛心</td>
       <td>牛</td>
-      <td>90.0</td>
-      <td>1.0</td>
-      <td>90.0</td>
+      <td>90.00</td>
+      <td>1</td>
+      <td>90.00</td>
     </tr>
     <tr>
       <td>c1</td>
       <td>凍乾無激素雞柳粒</td>
       <td>雞</td>
-      <td>86.0</td>
-      <td>1.0</td>
-      <td>86.0</td>
+      <td>86.00</td>
+      <td>1</td>
+      <td>86.00</td>
     </tr>
     <tr>
       <td>e1</td>
       <td>萬聖節手指/眼珠  I隻</td>
       <td>萬聖節</td>
-      <td>15.0</td>
-      <td>3.0</td>
-      <td>45.0</td>
+      <td>15.00</td>
+      <td>3</td>
+      <td>45.00</td>
     </tr>
   </tbody>
 </table></div>
