@@ -43,39 +43,92 @@
             padding: 24px;
             overflow: hidden;
         }
-        .table-wrap {
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
+        .section-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-size: 1.8rem;
         }
-        .report-table {
-            width: 100%;
-            min-width: 760px;
-            border-collapse: collapse;
-            margin-top: 12px;
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
-        .report-table th,
-        .report-table td {
-            border: 1px solid #e8e8e8;
-            padding: 12px 14px;
+        .month-card {
+            background: #fffaf7;
+            border: 1px solid #f1d4bf;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .month-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+        }
+        .month-card-header {
+            background: linear-gradient(135deg, #c45d1b, #e98b3a);
+            color: white;
+            padding: 16px 18px;
+        }
+        .month-card-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .month-card-body {
+            padding: 18px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0e5dc;
+        }
+        .info-row:last-of-type {
+            border-bottom: none;
+        }
+        .info-row-block {
+            display: block;
+        }
+        .info-row-block .label {
+            display: block;
+            margin-bottom: 6px;
+        }
+        .info-row-block .value {
+            display: block;
+            color: #2d3748;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+        .label {
+            color: #7a5a45;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .value {
+            color: #1f2937;
+            font-weight: 700;
+            text-align: right;
+        }
+        .card-action {
+            margin-top: 18px;
+        }
+        .card-action a {
+            display: inline-block;
+            width: 100%;
             text-align: center;
-            white-space: nowrap;
-        }
-        .report-table th {
             background: #c45d1b;
             color: white;
-        }
-        .report-table tr:nth-child(even) {
-            background: #fafafa;
-        }
-        .report-table a {
-            color: #c45d1b;
-            font-weight: bold;
             text-decoration: none;
+            font-weight: bold;
+            padding: 12px 16px;
+            border-radius: 10px;
+            transition: background 0.2s ease;
         }
-        .report-table a:hover {
-            text-decoration: underline;
+        .card-action a:hover {
+            background: #a94f17;
         }
         footer {
             text-align: center;
@@ -101,13 +154,33 @@
                 padding: 16px;
                 border-radius: 14px;
             }
-            .report-table {
-                min-width: 720px;
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 16px;
             }
-            .report-table th,
-            .report-table td {
-                padding: 10px 12px;
-                font-size: 0.92rem;
+            .month-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .month-card-header {
+                padding: 14px 16px;
+            }
+            .month-card-header h3 {
+                font-size: 1.15rem;
+            }
+            .month-card-body {
+                padding: 16px;
+            }
+            .info-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .value {
+                text-align: left;
+            }
+            .card-action a {
+                padding: 12px 14px;
             }
         }
     </style>
@@ -121,89 +194,199 @@
 
     <main>
         <section class="card">
-            <h2>每月報表總覽</h2>
-            
-<div class="table-wrap">
-<table class="report-table">
-    <thead>
-        <tr>
-            <th>月份</th>
-            <th>總銷售額</th>
-            <th>總單數</th>
-            <th>平均每單金額</th>
-            <th>最高營業額日期</th>
-            <th>報表連結</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr>
-            <td>2025-10</td>
-            <td>2281.8</td>
-            <td>17</td>
-            <td>134.22</td>
-            <td>2025-10-26（HKD 1075.20）</td>
-            <td><a href="2025-10.html">查看</a></td>
-        </tr>
+            <h2 class="section-title">每月報表總覽</h2>
+            <div class="month-grid">
+                
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2025-10</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 2281.8</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">17</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 134.22</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2025-10-26（HKD 1075.20）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2025-10.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-        <tr>
-            <td>2025-11</td>
-            <td>3315.9</td>
-            <td>14</td>
-            <td>236.85</td>
-            <td>2025-11-01（HKD 1234.90）</td>
-            <td><a href="2025-11.html">查看</a></td>
-        </tr>
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2025-11</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 3315.9</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">14</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 236.85</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2025-11-01（HKD 1234.90）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2025-11.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-        <tr>
-            <td>2025-12</td>
-            <td>14106.3</td>
-            <td>50</td>
-            <td>282.13</td>
-            <td>2025-12-01（HKD 2666.00）</td>
-            <td><a href="2025-12.html">查看</a></td>
-        </tr>
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2025-12</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 14106.3</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">50</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 282.13</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2025-12-01（HKD 2666.00）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2025-12.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-        <tr>
-            <td>2026-01</td>
-            <td>2791.8</td>
-            <td>10</td>
-            <td>279.18</td>
-            <td>2026-01-31（HKD 1249.80）</td>
-            <td><a href="2026-01.html">查看</a></td>
-        </tr>
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2026-01</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 2791.8</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">10</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 279.18</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2026-01-31（HKD 1249.80）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2026-01.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-        <tr>
-            <td>2026-02</td>
-            <td>12868.1</td>
-            <td>67</td>
-            <td>192.06</td>
-            <td>2026-02-04（HKD 2452.00）</td>
-            <td><a href="2026-02.html">查看</a></td>
-        </tr>
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2026-02</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 12868.1</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">67</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 192.06</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2026-02-04（HKD 2452.00）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2026-02.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-        <tr>
-            <td>2026-03</td>
-            <td>8403.3</td>
-            <td>31</td>
-            <td>271.07</td>
-            <td>2026-03-29（HKD 3927.80）</td>
-            <td><a href="2026-03.html">查看</a></td>
-        </tr>
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2026-03</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 8403.3</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">31</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 271.07</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2026-03-29（HKD 3927.80）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2026-03.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-        <tr>
-            <td>2026-04</td>
-            <td>21361.9</td>
-            <td>105</td>
-            <td>203.45</td>
-            <td>2026-04-12（HKD 5217.80）</td>
-            <td><a href="2026-04.html">查看</a></td>
-        </tr>
+        <div class="month-card">
+            <div class="month-card-header">
+                <h3>2026-04</h3>
+            </div>
+            <div class="month-card-body">
+                <div class="info-row">
+                    <span class="label">總銷售額</span>
+                    <span class="value">HKD 21361.9</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">總單數</span>
+                    <span class="value">105</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">平均每單金額</span>
+                    <span class="value">HKD 203.45</span>
+                </div>
+                <div class="info-row info-row-block">
+                    <span class="label">最高營業額日期</span>
+                    <span class="value">2026-04-12（HKD 5217.80）</span>
+                </div>
+                <div class="card-action">
+                    <a href="2026-04.html">查看報表</a>
+                </div>
+            </div>
+        </div>
     
-    </tbody>
-</table>
-</div>
-
+            </div>
         </section>
     </main>
 
