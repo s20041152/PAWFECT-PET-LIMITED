@@ -9,266 +9,394 @@
         * {
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
-            background: linear-gradient(180deg, #fffaf5 0%, #f7f8fb 100%);
-            color: #333;
+            background:
+                radial-gradient(circle at top left, rgba(255,244,235,0.9), transparent 22%),
+                linear-gradient(180deg, #fffaf5 0%, #f7f8fb 55%, #f4f7fb 100%);
+            color: var(--text);
             margin: 0;
             padding: 0;
         }
+
         
+:root {
+    --bg: #f6f8fb;
+    --bg-soft: #fffaf5;
+    --card: rgba(255,255,255,0.96);
+    --card-border: rgba(222, 226, 235, 0.9);
+    --text: #243041;
+    --muted: #6b7280;
+    --muted-2: #94a3b8;
+    --brand: #c45d1b;
+    --brand-dark: #9f4715;
+    --brand-soft: #fff3ea;
+    --line: #e8edf3;
+    --shadow-sm: 0 4px 16px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 18px 44px rgba(15, 23, 42, 0.10);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+}
+
 header {
-    background: linear-gradient(135deg, #c45d1b, #e98b3a);
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 28%),
+        linear-gradient(135deg, #b85317 0%, #d97528 52%, #eea45d 100%);
     color: white;
     text-align: center;
-    padding: 20px 16px 18px 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    padding: 22px 16px 18px 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
 }
+
 header h1 {
     margin: 0;
     font-size: 2rem;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
 }
+
 header h2 {
     margin: 6px 0 0 0;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.25;
+    opacity: 0.98;
 }
+
 .header-logo-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
 }
+
 .header-logo-badge {
-    background: rgba(255, 255, 255, 0.96);
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,248,242,0.98));
     padding: 10px 12px;
     border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.14);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.45);
+    backdrop-filter: blur(6px);
 }
+
 .header-logo {
     max-width: 110px;
     width: 100%;
     height: auto;
     display: block;
 }
+
 .last-updated {
-    margin: 10px 0 0 0;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.92);
+    display: inline-block;
+    margin: 12px 0 0 0;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
 }
+
 
         main {
             max-width: 1200px;
             margin: 24px auto;
             padding: 0 16px 40px 16px;
         }
+
         .card {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
             padding: 24px;
             overflow: hidden;
             margin-bottom: 24px;
+            backdrop-filter: blur(6px);
         }
+
         .section-title {
-            margin-top: 0;
-            margin-bottom: 20px;
-            color: #2d3748;
-            font-size: 1.8rem;
+            margin: 0 0 18px 0;
+            color: var(--text);
+            font-size: 1.5rem;
+            font-weight: 800;
+            position: relative;
+            padding-left: 14px;
         }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 5px;
+            height: calc(100% - 8px);
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--brand), #f0a35d);
+        }
+
         .desktop-only {
             display: block;
         }
+
         .mobile-only {
             display: none;
         }
+
         .month-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
+
         .month-card {
-            background: #fffaf7;
-            border: 1px solid #f1d4bf;
-            border-radius: 16px;
+            background: linear-gradient(180deg, #ffffff 0%, #fff8f3 100%);
+            border: 1px solid rgba(196, 93, 27, 0.10);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 10px 26px rgba(15,23,42,0.06);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
+
         .month-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+            box-shadow: 0 16px 30px rgba(15,23,42,0.10);
         }
+
         .month-card-header {
             background: linear-gradient(135deg, #c45d1b, #e98b3a);
             color: white;
             padding: 16px 18px;
         }
+
         .month-card-header h3 {
             margin: 0;
             font-size: 1.25rem;
         }
+
         .month-card-body {
             padding: 18px;
         }
+
         .info-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 12px;
             padding: 10px 0;
-            border-bottom: 1px solid #f0e5dc;
+            border-bottom: 1px solid #f2e6dc;
         }
+
         .info-row:last-of-type {
             border-bottom: none;
         }
+
         .info-row-block {
             display: block;
         }
+
         .info-row-block .label {
             display: block;
             margin-bottom: 6px;
         }
+
         .info-row-block .value {
             display: block;
             color: #2d3748;
             line-height: 1.5;
             word-break: break-word;
         }
+
         .label {
             color: #7a5a45;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
         }
+
         .value {
             color: #1f2937;
-            font-weight: 700;
+            font-weight: 800;
             text-align: right;
         }
+
         .card-action {
             margin-top: 18px;
         }
+
         .card-action a {
             display: inline-block;
             width: 100%;
             text-align: center;
-            background: #c45d1b;
+            background: linear-gradient(135deg, #c45d1b, #dc7b32);
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
             padding: 12px 16px;
-            border-radius: 10px;
-            transition: background 0.2s ease;
+            border-radius: 12px;
+            transition: all 0.18s ease;
+            box-shadow: 0 8px 18px rgba(196, 93, 27, 0.18);
         }
+
         .card-action a:hover {
-            background: #a94f17;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 22px rgba(196, 93, 27, 0.24);
         }
+
+        .table-shell {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.92);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+            overflow: hidden;
+        }
+
         .table-wrap {
             width: 100%;
             overflow-x: auto;
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
-            margin-top: 8px;
+            margin-top: 0;
         }
+
         .report-table {
             width: 100%;
             min-width: 720px;
-            border-collapse: collapse;
-            margin-top: 12px;
+            border-collapse: separate;
+            border-spacing: 0;
             background: white;
+            margin: 0;
         }
+
         .report-table th,
         .report-table td {
-            border: 1px solid #e8e8e8;
             padding: 12px 14px;
             text-align: center;
             white-space: nowrap;
         }
-        .report-table th {
-            background: #c45d1b;
+
+        .report-table thead th {
+            background: linear-gradient(180deg, #d26a24 0%, #bf5818 100%);
             color: white;
+            font-weight: 700;
         }
-        .report-table tr:nth-child(even) {
-            background: #fafafa;
+
+        .report-table tbody td {
+            border-bottom: 1px solid var(--line);
+            color: #334155;
+            background: rgba(255,255,255,0.92);
         }
+
+        .report-table tbody tr:nth-child(even) td {
+            background: #fbfcfd;
+        }
+
+        .report-table tbody tr:hover td {
+            background: #fff7f1;
+        }
+
+        .report-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
         .report-table a {
-            color: #c45d1b;
-            font-weight: bold;
+            color: var(--brand);
+            font-weight: 800;
             text-decoration: none;
         }
+
         .report-table a:hover {
             text-decoration: underline;
         }
+
         footer {
             text-align: center;
             color: #999;
             font-size: 0.9rem;
             padding: 20px 0 40px 0;
         }
+
         @media (max-width: 768px) {
             .desktop-only {
                 display: none;
             }
+
             .mobile-only {
                 display: block;
             }
+
             main {
                 margin: 16px auto;
                 padding: 0 12px 28px 12px;
             }
+
             .card {
                 padding: 16px;
-                border-radius: 14px;
+                border-radius: 16px;
                 margin-bottom: 16px;
             }
+
             .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 16px;
+                font-size: 1.3rem;
+                margin-bottom: 14px;
             }
+
             .month-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
+
             .month-card-header {
                 padding: 14px 16px;
             }
+
             .month-card-header h3 {
                 font-size: 1.15rem;
             }
+
             .month-card-body {
                 padding: 16px;
             }
+
             .info-row {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 6px;
             }
+
             .value {
                 text-align: left;
             }
+
             .card-action a {
                 padding: 12px 14px;
             }
+
             .report-table {
                 min-width: 680px;
             }
+
             .report-table th,
             .report-table td {
                 font-size: 0.92rem;
                 padding: 10px 12px;
             }
         }
+
         
 @media (max-width: 768px) {
     header {
-        padding: 16px 12px 14px 12px;
+        padding: 18px 12px 14px 12px;
     }
     header h1 {
         font-size: 1.5rem;
     }
     header h2 {
-        font-size: 1.05rem;
+        font-size: 1.02rem;
     }
     .header-logo-wrap {
         margin-bottom: 6px;
@@ -281,8 +409,9 @@ header h2 {
         max-width: 82px;
     }
     .last-updated {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         margin-top: 8px;
+        padding: 5px 10px;
     }
 }
 
@@ -298,7 +427,7 @@ header h2 {
         <h1>毛添加有限公司</h1>
         <h2>PAWFECT PET LIMITED</h2>
         <h2>月報首頁</h2>
-        <p class="last-updated">Last updated: 2026-04-20 00:31</p>
+        <p class="last-updated">Last updated: 2026-04-20 00:42</p>
     </header>
 
     <main>
@@ -307,6 +436,7 @@ header h2 {
 
             <div class="desktop-only">
                 
+<div class="table-shell">
 <div class="table-wrap">
 <table class="report-table month-report-table">
     <thead>
@@ -386,6 +516,7 @@ header h2 {
     
     </tbody>
 </table>
+</div>
 </div>
 
             </div>
@@ -589,6 +720,7 @@ header h2 {
         <section class="card">
             <h2 class="section-title">季度報表總覽</h2>
             
+<div class="table-shell">
 <div class="table-wrap">
 <table class="report-table quarter-table">
     <thead>
@@ -628,6 +760,7 @@ header h2 {
     
     </tbody>
 </table>
+</div>
 </div>
 
         </section>

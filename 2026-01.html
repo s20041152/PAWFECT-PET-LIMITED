@@ -10,170 +10,317 @@
         * {
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
-            background: linear-gradient(180deg, #fffaf5 0%, #f7f8fb 100%);
-            color: #333;
+            background:
+                radial-gradient(circle at top left, rgba(255,244,235,0.9), transparent 22%),
+                linear-gradient(180deg, #fffaf5 0%, #f7f8fb 55%, #f4f7fb 100%);
+            color: var(--text);
             margin: 0;
             padding: 0;
         }
+
         
+:root {
+    --bg: #f6f8fb;
+    --bg-soft: #fffaf5;
+    --card: rgba(255,255,255,0.96);
+    --card-border: rgba(222, 226, 235, 0.9);
+    --text: #243041;
+    --muted: #6b7280;
+    --muted-2: #94a3b8;
+    --brand: #c45d1b;
+    --brand-dark: #9f4715;
+    --brand-soft: #fff3ea;
+    --line: #e8edf3;
+    --shadow-sm: 0 4px 16px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 18px 44px rgba(15, 23, 42, 0.10);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+}
+
 header {
-    background: linear-gradient(135deg, #c45d1b, #e98b3a);
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 28%),
+        linear-gradient(135deg, #b85317 0%, #d97528 52%, #eea45d 100%);
     color: white;
     text-align: center;
-    padding: 20px 16px 18px 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    padding: 22px 16px 18px 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
 }
+
 header h1 {
     margin: 0;
     font-size: 2rem;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
 }
+
 header h2 {
     margin: 6px 0 0 0;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.25;
+    opacity: 0.98;
 }
+
 .header-logo-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
 }
+
 .header-logo-badge {
-    background: rgba(255, 255, 255, 0.96);
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,248,242,0.98));
     padding: 10px 12px;
     border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.14);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.45);
+    backdrop-filter: blur(6px);
 }
+
 .header-logo {
     max-width: 110px;
     width: 100%;
     height: auto;
     display: block;
 }
+
 .last-updated {
-    margin: 10px 0 0 0;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.92);
+    display: inline-block;
+    margin: 12px 0 0 0;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
 }
 
+
         main {
-            max-width: 1300px;
-            margin: 24px auto;
-            padding: 0 16px 40px 16px;
+            max-width: 1320px;
+            margin: 26px auto;
+            padding: 0 16px 42px 16px;
         }
+
         .top-nav {
             margin-bottom: 20px;
         }
+
         .top-nav a {
-            display: inline-block;
-            background: #fff;
-            color: #c45d1b;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.92);
+            color: var(--brand);
             text-decoration: none;
-            padding: 10px 14px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            font-weight: 600;
+            padding: 11px 16px;
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(196, 93, 27, 0.10);
+            font-weight: 700;
+            transition: all 0.18s ease;
         }
-        .card {
+
+        .top-nav a:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
             background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
             padding: 24px;
             margin-bottom: 24px;
             overflow: hidden;
+            backdrop-filter: blur(6px);
         }
+
         .card h2 {
-            margin-top: 0;
-            color: #c45d1b;
+            margin: 0 0 18px 0;
+            color: var(--text);
+            font-size: 1.32rem;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            position: relative;
+            padding-left: 14px;
         }
+
+        .card h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 5px;
+            height: calc(100% - 8px);
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--brand), #f0a35d);
+        }
+
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
         }
+
         .summary-box {
-            background: linear-gradient(135deg, #fff7f0, #fff1e8);
-            border-left: 6px solid #c45d1b;
-            border-radius: 12px;
-            padding: 16px;
+            position: relative;
+            background: linear-gradient(180deg, #ffffff 0%, #fff8f3 100%);
+            border: 1px solid rgba(196, 93, 27, 0.10);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 6px 20px rgba(15,23,42,0.05);
+            overflow: hidden;
         }
+
+        .summary-box::after {
+            content: "";
+            position: absolute;
+            right: -18px;
+            top: -18px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(196,93,27,0.10), transparent 70%);
+        }
+
         .summary-box h3 {
             margin: 0 0 8px 0;
-            font-size: 0.95rem;
-            color: #666;
+            font-size: 0.92rem;
+            color: var(--muted);
+            font-weight: 700;
         }
+
         .summary-box p {
             margin: 0;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #222;
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #1f2937;
+            letter-spacing: -0.02em;
         }
+
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
+
         .chart-card {
             position: relative;
             height: 360px;
-            background: #fff;
-            border-radius: 12px;
-            padding: 8px;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 12px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
         }
+
+        .table-shell {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.92);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+            overflow: hidden;
+        }
+
         .table-wrap {
             width: 100%;
             overflow-x: auto;
-            overflow-y: hidden;
+            overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
+
         .report-table {
             width: 100%;
             min-width: 760px;
-            border-collapse: collapse;
-            margin-top: 12px;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 0;
             font-size: 0.95rem;
         }
-        .report-table th,
-        .report-table td {
-            border: 1px solid #e8e8e8;
-            padding: 10px 12px;
-            white-space: nowrap;
-        }
-        .report-table th {
-            background: #c45d1b;
-            color: white;
-            text-align: center;
+
+        .report-table thead th {
             position: sticky;
             top: 0;
+            z-index: 2;
+            background: linear-gradient(180deg, #d26a24 0%, #bf5818 100%);
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            padding: 13px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.16);
+            white-space: nowrap;
         }
-        .report-table td {
+
+        .report-table thead th:first-child {
+            border-top-left-radius: 14px;
+        }
+
+        .report-table thead th:last-child {
+            border-top-right-radius: 14px;
+        }
+
+        .report-table tbody td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+            white-space: nowrap;
             text-align: right;
+            color: #334155;
+            background: rgba(255,255,255,0.92);
+            transition: background 0.15s ease;
         }
+
+        .report-table tbody tr:nth-child(even) td {
+            background: #fbfcfd;
+        }
+
+        .report-table tbody tr:hover td {
+            background: #fff7f1;
+        }
+
+        .report-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
         .report-table td:first-child,
         .report-table td:nth-child(2),
         .report-table td:nth-child(3) {
             text-align: left;
         }
-        .report-table tr:nth-child(even) {
-            background: #fafafa;
-        }
+
         ul.insight-list {
             margin: 0;
             padding-left: 20px;
-            line-height: 1.8;
+            line-height: 1.95;
+            color: #334155;
         }
+
+        ul.insight-list li::marker {
+            color: var(--brand);
+        }
+
         .note {
-            color: #777;
+            color: var(--muted);
+            margin: 0;
         }
+
         footer {
             text-align: center;
-            color: #999;
+            color: #8a94a6;
             font-size: 0.9rem;
             padding: 20px 0 40px 0;
         }
+
         @media (max-width: 900px) {
             .two-col {
                 grid-template-columns: 1fr;
@@ -182,44 +329,67 @@ header h2 {
                 height: 320px;
             }
         }
+
         @media (max-width: 768px) {
             main {
                 margin: 16px auto;
                 padding: 0 12px 28px 12px;
             }
+
             .card {
                 padding: 16px;
-                border-radius: 14px;
+                border-radius: 16px;
                 margin-bottom: 16px;
             }
+
+            .card h2 {
+                font-size: 1.14rem;
+                margin-bottom: 14px;
+            }
+
             .summary-grid {
                 grid-template-columns: 1fr;
             }
-            .summary-box p {
-                font-size: 1.25rem;
+
+            .summary-box {
+                padding: 16px;
+                border-radius: 16px;
             }
+
+            .summary-box p {
+                font-size: 1.3rem;
+            }
+
             .chart-card {
                 height: 280px;
+                border-radius: 16px;
             }
+
+            .table-shell {
+                border-radius: 16px;
+            }
+
             .report-table {
                 min-width: 720px;
                 font-size: 0.9rem;
             }
-            .report-table th,
-            .report-table td {
-                padding: 9px 10px;
+
+            .report-table thead th,
+            .report-table tbody td {
+                padding: 10px 11px;
             }
         }
+
         
 @media (max-width: 768px) {
     header {
-        padding: 16px 12px 14px 12px;
+        padding: 18px 12px 14px 12px;
     }
     header h1 {
         font-size: 1.5rem;
     }
     header h2 {
-        font-size: 1.05rem;
+        font-size: 1.02rem;
     }
     .header-logo-wrap {
         margin-bottom: 6px;
@@ -232,8 +402,9 @@ header h2 {
         max-width: 82px;
     }
     .last-updated {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         margin-top: 8px;
+        padding: 5px 10px;
     }
 }
 
@@ -249,7 +420,7 @@ header h2 {
         <h1>毛添加有限公司</h1>
         <h2>PAWFECT PET LIMITED</h2>
         <h2>2026-01 月度銷售報表</h2>
-        <p class="last-updated">Last updated: 2026-04-20 00:31</p>
+        <p class="last-updated">Last updated: 2026-04-20 00:42</p>
     </header>
 
     <main>
@@ -301,24 +472,42 @@ header h2 {
                     label: "每日營業額",
                     data: [829.8, 88.2, 624.0, 1249.8],
                     backgroundColor: '#c45d1b',
-                    borderRadius: 6
+                    borderRadius: 8,
+                    borderSkipped: false
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: true }
+                    legend: {
+                        display: true,
+                        labels: {
+                            boxWidth: 12,
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded'
+                        }
+                    }
                 },
                 scales: {
                     x: {
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             maxRotation: 45,
-                            minRotation: 0
+                            minRotation: 0,
+                            color: '#5b6575'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.18)'
+                        },
+                        ticks: {
+                            color: '#5b6575'
+                        }
                     }
                 }
             }
@@ -343,24 +532,42 @@ header h2 {
                     label: "商品銷量 Top 10",
                     data: [4.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0],
                     backgroundColor: '#3b82f6',
-                    borderRadius: 6
+                    borderRadius: 8,
+                    borderSkipped: false
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: true }
+                    legend: {
+                        display: true,
+                        labels: {
+                            boxWidth: 12,
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded'
+                        }
+                    }
                 },
                 scales: {
                     x: {
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             maxRotation: 45,
-                            minRotation: 0
+                            minRotation: 0,
+                            color: '#5b6575'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.18)'
+                        },
+                        ticks: {
+                            color: '#5b6575'
+                        }
                     }
                 }
             }
@@ -380,24 +587,42 @@ header h2 {
                     label: "商品銷售額 Top 10",
                     data: [432.0, 420.0, 320.0, 248.0, 200.0, 196.0, 176.0, 172.0, 168.0, 140.0],
                     backgroundColor: '#10b981',
-                    borderRadius: 6
+                    borderRadius: 8,
+                    borderSkipped: false
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: true }
+                    legend: {
+                        display: true,
+                        labels: {
+                            boxWidth: 12,
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded'
+                        }
+                    }
                 },
                 scales: {
                     x: {
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             maxRotation: 45,
-                            minRotation: 0
+                            minRotation: 0,
+                            color: '#5b6575'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.18)'
+                        },
+                        ticks: {
+                            color: '#5b6575'
+                        }
                     }
                 }
             }
@@ -423,24 +648,42 @@ header h2 {
                     label: "分類銷量排行",
                     data: [8.0, 7.0, 3.0, 2.0, 2.0, 1.0],
                     backgroundColor: '#8b5cf6',
-                    borderRadius: 6
+                    borderRadius: 8,
+                    borderSkipped: false
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: true }
+                    legend: {
+                        display: true,
+                        labels: {
+                            boxWidth: 12,
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded'
+                        }
+                    }
                 },
                 scales: {
                     x: {
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             maxRotation: 45,
-                            minRotation: 0
+                            minRotation: 0,
+                            color: '#5b6575'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.18)'
+                        },
+                        ticks: {
+                            color: '#5b6575'
+                        }
                     }
                 }
             }
@@ -460,24 +703,42 @@ header h2 {
                     label: "分類銷售額排行",
                     data: [1046.0, 712.0, 376.0, 374.0, 196.0, 168.0],
                     backgroundColor: '#ef4444',
-                    borderRadius: 6
+                    borderRadius: 8,
+                    borderSkipped: false
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: true }
+                    legend: {
+                        display: true,
+                        labels: {
+                            boxWidth: 12,
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded'
+                        }
+                    }
                 },
                 scales: {
                     x: {
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             maxRotation: 45,
-                            minRotation: 0
+                            minRotation: 0,
+                            color: '#5b6575'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.18)'
+                        },
+                        ticks: {
+                            color: '#5b6575'
+                        }
                     }
                 }
             }
@@ -489,7 +750,7 @@ header h2 {
 
         <section class="card">
             <h2>每日營業額</h2>
-            <div class="table-wrap"><table class="dataframe report-table">
+            <div class="table-shell"><div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Date</th>
@@ -519,12 +780,12 @@ header h2 {
       <td>1,249.80</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></div>
         </section>
 
         <section class="card">
             <h2>商品銷量排行（按數量）</h2>
-            <div class="table-wrap"><table class="dataframe report-table">
+            <div class="table-shell"><div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Product</th>
@@ -589,12 +850,12 @@ header h2 {
       <td>1</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></div>
         </section>
 
         <section class="card">
             <h2>商品銷售排行（按銷售額）</h2>
-            <div class="table-wrap"><table class="dataframe report-table">
+            <div class="table-shell"><div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Product</th>
@@ -659,12 +920,12 @@ header h2 {
       <td>76.00</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></div>
         </section>
 
         <section class="card">
             <h2>分類排行（按數量）</h2>
-            <div class="table-wrap"><table class="dataframe report-table">
+            <div class="table-shell"><div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Category</th>
@@ -697,12 +958,12 @@ header h2 {
       <td>1</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></div>
         </section>
 
         <section class="card">
             <h2>分類排行（按銷售額）</h2>
-            <div class="table-wrap"><table class="dataframe report-table">
+            <div class="table-shell"><div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Category</th>
@@ -735,12 +996,12 @@ header h2 {
       <td>168.00</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></div>
         </section>
 
         <section class="card">
             <h2>商品完整明細</h2>
-            <div class="table-wrap"><table class="dataframe report-table">
+            <div class="table-shell"><div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Item ID</th>
@@ -865,7 +1126,7 @@ header h2 {
       <td>76.00</td>
     </tr>
   </tbody>
-</table></div>
+</table></div></div>
         </section>
 
         <section class="card">
