@@ -1,0 +1,1030 @@
+
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2026-04 月度銷售報表</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+            background: linear-gradient(180deg, #fffaf5 0%, #f7f8fb 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #c45d1b, #e98b3a);
+            color: white;
+            text-align: center;
+            padding: 32px 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header h2 {
+            margin: 8px 0 0 0;
+            font-weight: 400;
+        }
+        main {
+            max-width: 1300px;
+            margin: 24px auto;
+            padding: 0 16px 40px 16px;
+        }
+        .top-nav {
+            margin-bottom: 20px;
+        }
+        .top-nav a {
+            display: inline-block;
+            background: #fff;
+            color: #c45d1b;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-weight: 600;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #c45d1b;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, #fff7f0, #fff1e8);
+            border-left: 6px solid #c45d1b;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .summary-box h3 {
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .summary-box p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #222;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .chart-card {
+            position: relative;
+            height: 360px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 8px;
+        }
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            overflow: hidden;
+        }
+        .report-table th, .report-table td {
+            border: 1px solid #e8e8e8;
+            padding: 10px 12px;
+        }
+        .report-table th {
+            background: #c45d1b;
+            color: white;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        .report-table td {
+            text-align: right;
+        }
+        .report-table td:first-child,
+        .report-table td:nth-child(2),
+        .report-table td:nth-child(3) {
+            text-align: left;
+        }
+        .report-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+        ul.insight-list {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+        .note {
+            color: #777;
+        }
+        footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+            padding: 20px 0 40px 0;
+        }
+        @media (max-width: 900px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .chart-card {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>毛添加有限公司</h1>
+        <h2>PAWFECT PET LIMITED</h2>
+        <h2>2026-04 月度銷售報表</h2>
+    </header>
+
+    <main>
+        <div class="top-nav">
+            <a href="index.html">← 返回月報首頁</a>
+        </div>
+
+        <section class="card">
+            <h2>月度摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-box">
+                    <h3>本月總銷售額</h3>
+                    <p>HKD 21,361.90</p>
+                </div>
+                <div class="summary-box">
+                    <h3>總單數</h3>
+                    <p>105</p>
+                </div>
+                <div class="summary-box">
+                    <h3>平均每單金額</h3>
+                    <p>HKD 203.45</p>
+                </div>
+                <div class="summary-box">
+                    <h3>平均每日營業額</h3>
+                    <p>HKD 2,373.54</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>重點分析</h2>
+            <ul class="insight-list">
+                <li>最高營業額日期：2026-04-12（HKD 5217.80）</li><li>平均每日營業額：HKD 2373.54</li><li>平均每單金額：HKD 203.45</li><li>數量最多商品：本地新鮮馬鮫魚-60g（33 件）</li><li>銷售額最高商品：本地新鮮馬鮫魚-60g（HKD 4620.00）</li><li>數量最多分類：海產（75 件）</li><li>銷售額最高分類：海產（HKD 10028.00）</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>每日營業額圖表</h2>
+            
+    <div class="chart-card">
+        <canvas id="dailyChart_2026_04"></canvas>
+    </div>
+    <script>
+        new Chart(document.getElementById('dailyChart_2026_04'), {
+            type: 'bar',
+            data: {
+                labels: ["2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-07", "2026-04-10", "2026-04-12", "2026-04-18", "2026-04-19"],
+                datasets: [{
+                    label: "每日營業額",
+                    data: [1517.8, 1566.6, 1598.2, 3829.3, 2118.2, 356.4, 5217.8, 2480.0, 2677.6],
+                    backgroundColor: '#c45d1b',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    
+        </section>
+
+        <section class="card">
+            <h2>商品圖表分析</h2>
+            <div class="two-col">
+                <div>
+    <div class="chart-card">
+        <canvas id="productQtyChart_2026_04"></canvas>
+    </div>
+    <script>
+        new Chart(document.getElementById('productQtyChart_2026_04'), {
+            type: 'bar',
+            data: {
+                labels: ["本地新鮮馬鮫魚-60g", "凍乾豬片", "鵪鶉", "雞公蝦", "凍乾魷魚", "凍乾袋鼠肉", "凍乾豬片 10g", "本地新鮮馬鮫魚-一片", "凍乾鹿肉", "凍乾紅蝦"],
+                datasets: [{
+                    label: "商品銷量 Top 10",
+                    data: [33.0, 15.0, 10.0, 9.0, 8.0, 8.0, 7.0, 7.0, 7.0, 7.0],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    </div>
+                <div>
+    <div class="chart-card">
+        <canvas id="productSalesChart_2026_04"></canvas>
+    </div>
+    <script>
+        new Chart(document.getElementById('productSalesChart_2026_04'), {
+            type: 'bar',
+            data: {
+                labels: ["本地新鮮馬鮫魚-60g", "凍乾豬片", "凍乾紅蝦", "雞公蝦", "凍乾魷魚", "凍乾袋鼠肉", "凍乾鹿肉", "凍乾鱷魚肉", "凍乾鴨胸", "鵪鶉"],
+                datasets: [{
+                    label: "商品銷售額 Top 10",
+                    data: [4620.0, 1470.0, 1470.0, 1332.0, 1280.0, 1248.0, 1050.0, 1000.0, 880.0, 780.0],
+                    backgroundColor: '#10b981',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>分類圖表分析</h2>
+            <div class="two-col">
+                <div>
+    <div class="chart-card">
+        <canvas id="categoryQtyChart_2026_04"></canvas>
+    </div>
+    <script>
+        new Chart(document.getElementById('categoryQtyChart_2026_04'), {
+            type: 'bar',
+            data: {
+                labels: ["海產", "豬", "其他", "大隻", "牛", "雞", "隱蔽menu"],
+                datasets: [{
+                    label: "分類銷量排行",
+                    data: [75.0, 33.0, 29.0, 18.0, 16.0, 11.0, 7.0],
+                    backgroundColor: '#8b5cf6',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    </div>
+                <div>
+    <div class="chart-card">
+        <canvas id="categorySalesChart_2026_04"></canvas>
+    </div>
+    <script>
+        new Chart(document.getElementById('categorySalesChart_2026_04'), {
+            type: 'bar',
+            data: {
+                labels: ["海產", "其他", "豬", "牛", "大隻", "雞", "隱蔽menu"],
+                datasets: [{
+                    label: "分類銷售額排行",
+                    data: [10028.0, 4544.0, 2598.0, 1642.0, 1598.0, 1078.0, 836.0],
+                    backgroundColor: '#ef4444',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>每日營業額</h2>
+            <table class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Date</th>
+      <th>Orders</th>
+      <th>Daily Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-04-02</td>
+      <td>4</td>
+      <td>1517.8</td>
+    </tr>
+    <tr>
+      <td>2026-04-03</td>
+      <td>10</td>
+      <td>1566.6</td>
+    </tr>
+    <tr>
+      <td>2026-04-04</td>
+      <td>10</td>
+      <td>1598.2</td>
+    </tr>
+    <tr>
+      <td>2026-04-06</td>
+      <td>14</td>
+      <td>3829.3</td>
+    </tr>
+    <tr>
+      <td>2026-04-07</td>
+      <td>13</td>
+      <td>2118.2</td>
+    </tr>
+    <tr>
+      <td>2026-04-10</td>
+      <td>1</td>
+      <td>356.4</td>
+    </tr>
+    <tr>
+      <td>2026-04-12</td>
+      <td>21</td>
+      <td>5217.8</td>
+    </tr>
+    <tr>
+      <td>2026-04-18</td>
+      <td>15</td>
+      <td>2480.0</td>
+    </tr>
+    <tr>
+      <td>2026-04-19</td>
+      <td>17</td>
+      <td>2677.6</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <section class="card">
+            <h2>商品銷量排行（按數量）</h2>
+            <table class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Product</th>
+      <th>Qty Sold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>本地新鮮馬鮫魚-60g</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬片</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <td>鵪鶉</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <td>雞公蝦</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>凍乾魷魚</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>凍乾袋鼠肉</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬片 10g</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>本地新鮮馬鮫魚-一片</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>凍乾鹿肉</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>凍乾紅蝦</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬粒</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td>鱷魚XL</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>百答</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾鱷魚肉</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾鴨胸</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬肝</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾無激素雞柳粒</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾牛牛(牛冧)</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾牛心</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>凍乾白飯魚</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <section class="card">
+            <h2>商品銷售排行（按銷售額）</h2>
+            <table class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Product</th>
+      <th>Sales Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>本地新鮮馬鮫魚-60g</td>
+      <td>4620.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬片</td>
+      <td>1470.0</td>
+    </tr>
+    <tr>
+      <td>凍乾紅蝦</td>
+      <td>1470.0</td>
+    </tr>
+    <tr>
+      <td>雞公蝦</td>
+      <td>1332.0</td>
+    </tr>
+    <tr>
+      <td>凍乾魷魚</td>
+      <td>1280.0</td>
+    </tr>
+    <tr>
+      <td>凍乾袋鼠肉</td>
+      <td>1248.0</td>
+    </tr>
+    <tr>
+      <td>凍乾鹿肉</td>
+      <td>1050.0</td>
+    </tr>
+    <tr>
+      <td>凍乾鱷魚肉</td>
+      <td>1000.0</td>
+    </tr>
+    <tr>
+      <td>凍乾鴨胸</td>
+      <td>880.0</td>
+    </tr>
+    <tr>
+      <td>鵪鶉</td>
+      <td>780.0</td>
+    </tr>
+    <tr>
+      <td>凍乾牛牛(牛冧)</td>
+      <td>620.0</td>
+    </tr>
+    <tr>
+      <td>鱷魚XL</td>
+      <td>600.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬粒</td>
+      <td>588.0</td>
+    </tr>
+    <tr>
+      <td>百答</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>凍乾牛心</td>
+      <td>450.0</td>
+    </tr>
+    <tr>
+      <td>凍乾原條雞柳</td>
+      <td>432.0</td>
+    </tr>
+    <tr>
+      <td>凍乾無激素雞柳粒</td>
+      <td>430.0</td>
+    </tr>
+    <tr>
+      <td>凍乾豬肝</td>
+      <td>400.0</td>
+    </tr>
+    <tr>
+      <td>凍乾白飯魚</td>
+      <td>360.0</td>
+    </tr>
+    <tr>
+      <td>鷓鴣</td>
+      <td>336.0</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <section class="card">
+            <h2>分類排行（按數量）</h2>
+            <table class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Category</th>
+      <th>Qty Sold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>海產</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <td>豬</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>其他</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <td>大隻</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <td>牛</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <td>雞</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <td>隱蔽menu</td>
+      <td>7.0</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <section class="card">
+            <h2>分類排行（按銷售額）</h2>
+            <table class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Category</th>
+      <th>Sales Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>海產</td>
+      <td>10028.0</td>
+    </tr>
+    <tr>
+      <td>其他</td>
+      <td>4544.0</td>
+    </tr>
+    <tr>
+      <td>豬</td>
+      <td>2598.0</td>
+    </tr>
+    <tr>
+      <td>牛</td>
+      <td>1642.0</td>
+    </tr>
+    <tr>
+      <td>大隻</td>
+      <td>1598.0</td>
+    </tr>
+    <tr>
+      <td>雞</td>
+      <td>1078.0</td>
+    </tr>
+    <tr>
+      <td>隱蔽menu</td>
+      <td>836.0</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <section class="card">
+            <h2>商品完整明細</h2>
+            <table class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Item ID</th>
+      <th>Product</th>
+      <th>Category</th>
+      <th>Unit Price</th>
+      <th>Qty Sold</th>
+      <th>Sales Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>s12</td>
+      <td>本地新鮮馬鮫魚-60g</td>
+      <td>海產</td>
+      <td>140.0</td>
+      <td>33.0</td>
+      <td>4620.0</td>
+    </tr>
+    <tr>
+      <td>p2</td>
+      <td>凍乾豬片</td>
+      <td>豬</td>
+      <td>98.0</td>
+      <td>15.0</td>
+      <td>1470.0</td>
+    </tr>
+    <tr>
+      <td>s7</td>
+      <td>凍乾紅蝦</td>
+      <td>海產</td>
+      <td>210.0</td>
+      <td>7.0</td>
+      <td>1470.0</td>
+    </tr>
+    <tr>
+      <td>s14</td>
+      <td>雞公蝦</td>
+      <td>海產</td>
+      <td>148.0</td>
+      <td>9.0</td>
+      <td>1332.0</td>
+    </tr>
+    <tr>
+      <td>s8</td>
+      <td>凍乾魷魚</td>
+      <td>海產</td>
+      <td>160.0</td>
+      <td>8.0</td>
+      <td>1280.0</td>
+    </tr>
+    <tr>
+      <td>o2</td>
+      <td>凍乾袋鼠肉</td>
+      <td>其他</td>
+      <td>156.0</td>
+      <td>8.0</td>
+      <td>1248.0</td>
+    </tr>
+    <tr>
+      <td>o3</td>
+      <td>凍乾鹿肉</td>
+      <td>其他</td>
+      <td>150.0</td>
+      <td>7.0</td>
+      <td>1050.0</td>
+    </tr>
+    <tr>
+      <td>o4</td>
+      <td>凍乾鱷魚肉</td>
+      <td>其他</td>
+      <td>200.0</td>
+      <td>5.0</td>
+      <td>1000.0</td>
+    </tr>
+    <tr>
+      <td>o1</td>
+      <td>凍乾鴨胸</td>
+      <td>其他</td>
+      <td>176.0</td>
+      <td>5.0</td>
+      <td>880.0</td>
+    </tr>
+    <tr>
+      <td>b1</td>
+      <td>鵪鶉</td>
+      <td>大隻</td>
+      <td>78.0</td>
+      <td>10.0</td>
+      <td>780.0</td>
+    </tr>
+    <tr>
+      <td>cow1</td>
+      <td>凍乾牛牛(牛冧)</td>
+      <td>牛</td>
+      <td>124.0</td>
+      <td>5.0</td>
+      <td>620.0</td>
+    </tr>
+    <tr>
+      <td>b6</td>
+      <td>鱷魚XL</td>
+      <td>大隻</td>
+      <td>120.0</td>
+      <td>5.0</td>
+      <td>600.0</td>
+    </tr>
+    <tr>
+      <td>p1</td>
+      <td>凍乾豬粒</td>
+      <td>豬</td>
+      <td>98.0</td>
+      <td>6.0</td>
+      <td>588.0</td>
+    </tr>
+    <tr>
+      <td>oo2</td>
+      <td>百答</td>
+      <td>隱蔽menu</td>
+      <td>100.0</td>
+      <td>5.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>cow3</td>
+      <td>凍乾牛心</td>
+      <td>牛</td>
+      <td>90.0</td>
+      <td>5.0</td>
+      <td>450.0</td>
+    </tr>
+    <tr>
+      <td>c2</td>
+      <td>凍乾原條雞柳</td>
+      <td>雞</td>
+      <td>108.0</td>
+      <td>4.0</td>
+      <td>432.0</td>
+    </tr>
+    <tr>
+      <td>c1</td>
+      <td>凍乾無激素雞柳粒</td>
+      <td>雞</td>
+      <td>86.0</td>
+      <td>5.0</td>
+      <td>430.0</td>
+    </tr>
+    <tr>
+      <td>p3</td>
+      <td>凍乾豬肝</td>
+      <td>豬</td>
+      <td>80.0</td>
+      <td>5.0</td>
+      <td>400.0</td>
+    </tr>
+    <tr>
+      <td>s9</td>
+      <td>凍乾白飯魚</td>
+      <td>海產</td>
+      <td>90.0</td>
+      <td>4.0</td>
+      <td>360.0</td>
+    </tr>
+    <tr>
+      <td>oo1</td>
+      <td>鷓鴣</td>
+      <td>隱蔽menu</td>
+      <td>168.0</td>
+      <td>2.0</td>
+      <td>336.0</td>
+    </tr>
+    <tr>
+      <td>cow4</td>
+      <td>凍乾牛肝粒</td>
+      <td>牛</td>
+      <td>80.0</td>
+      <td>4.0</td>
+      <td>320.0</td>
+    </tr>
+    <tr>
+      <td>o5</td>
+      <td>凍乾鹿筋</td>
+      <td>其他</td>
+      <td>155.0</td>
+      <td>2.0</td>
+      <td>310.0</td>
+    </tr>
+    <tr>
+      <td>cow2</td>
+      <td>凍乾牛前柳</td>
+      <td>牛</td>
+      <td>126.0</td>
+      <td>2.0</td>
+      <td>252.0</td>
+    </tr>
+    <tr>
+      <td>s3</td>
+      <td>凍乾三文魚粒</td>
+      <td>海產</td>
+      <td>220.0</td>
+      <td>1.0</td>
+      <td>220.0</td>
+    </tr>
+    <tr>
+      <td>c3</td>
+      <td>凍乾雞心</td>
+      <td>雞</td>
+      <td>108.0</td>
+      <td>2.0</td>
+      <td>216.0</td>
+    </tr>
+    <tr>
+      <td>s13</td>
+      <td>本地新鮮馬鮫魚-一片</td>
+      <td>海產</td>
+      <td>22.0</td>
+      <td>7.0</td>
+      <td>154.0</td>
+    </tr>
+    <tr>
+      <td>p4</td>
+      <td>凍乾豬片 10g</td>
+      <td>豬</td>
+      <td>20.0</td>
+      <td>7.0</td>
+      <td>140.0</td>
+    </tr>
+    <tr>
+      <td>s10</td>
+      <td>凍乾池魚仔</td>
+      <td>海產</td>
+      <td>140.0</td>
+      <td>1.0</td>
+      <td>140.0</td>
+    </tr>
+    <tr>
+      <td>s2</td>
+      <td>凍乾吞拿魚片</td>
+      <td>海產</td>
+      <td>140.0</td>
+      <td>1.0</td>
+      <td>140.0</td>
+    </tr>
+    <tr>
+      <td>s5</td>
+      <td>凍乾多春魚</td>
+      <td>海產</td>
+      <td>128.0</td>
+      <td>1.0</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <td>b3</td>
+      <td>鱷魚s</td>
+      <td>大隻</td>
+      <td>60.0</td>
+      <td>2.0</td>
+      <td>120.0</td>
+    </tr>
+    <tr>
+      <td>s6</td>
+      <td>凍乾海鱸魚</td>
+      <td>海產</td>
+      <td>108.0</td>
+      <td>1.0</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <td>b5</td>
+      <td>鱷魚L</td>
+      <td>大隻</td>
+      <td>98.0</td>
+      <td>1.0</td>
+      <td>98.0</td>
+    </tr>
+    <tr>
+      <td>s11</td>
+      <td>本地新鮮百花鱸魚-10g裝</td>
+      <td>海產</td>
+      <td>38.0</td>
+      <td>2.0</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <td>o6</td>
+      <td>凍乾鹿肉 10g</td>
+      <td>其他</td>
+      <td>28.0</td>
+      <td>2.0</td>
+      <td>56.0</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <section class="card">
+            <h2>異常或略過檔案</h2>
+            <p class="note">沒有資料。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 毛添加有限公司 PAWFECT PET LIMITED — 月度銷售報表</p>
+    </footer>
+</body>
+</html>
