@@ -50,6 +50,15 @@
             color: #2d3748;
             font-size: 1.8rem;
         }
+
+        /* Desktop table / Mobile card switching */
+        .desktop-only {
+            display: block;
+        }
+        .mobile-only {
+            display: none;
+        }
+
         .month-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -131,6 +140,7 @@
         .card-action a:hover {
             background: #a94f17;
         }
+
         .table-wrap {
             width: 100%;
             overflow-x: auto;
@@ -159,13 +169,30 @@
         .report-table tr:nth-child(even) {
             background: #fafafa;
         }
+        .report-table a {
+            color: #c45d1b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .report-table a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
             color: #999;
             font-size: 0.9rem;
             padding: 20px 0 40px 0;
         }
+
         @media (max-width: 768px) {
+            .desktop-only {
+                display: none;
+            }
+            .mobile-only {
+                display: block;
+            }
+
             header {
                 padding: 24px 12px;
             }
@@ -233,8 +260,95 @@
     <main>
         <section class="card">
             <h2 class="section-title">每月報表總覽</h2>
-            <div class="month-grid">
+
+            <div class="desktop-only">
                 
+<div class="table-wrap">
+<table class="report-table month-report-table">
+    <thead>
+        <tr>
+            <th>月份</th>
+            <th>總銷售額</th>
+            <th>總單數</th>
+            <th>平均每單金額</th>
+            <th>最高營業額日期</th>
+            <th>報表連結</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>2026-04</td>
+            <td>HKD 21361.9</td>
+            <td>105</td>
+            <td>HKD 203.45</td>
+            <td>2026-04-12（HKD 5217.80）</td>
+            <td><a href="2026-04.html">查看</a></td>
+        </tr>
+    
+        <tr>
+            <td>2026-03</td>
+            <td>HKD 8403.3</td>
+            <td>31</td>
+            <td>HKD 271.07</td>
+            <td>2026-03-29（HKD 3927.80）</td>
+            <td><a href="2026-03.html">查看</a></td>
+        </tr>
+    
+        <tr>
+            <td>2026-02</td>
+            <td>HKD 12868.1</td>
+            <td>67</td>
+            <td>HKD 192.06</td>
+            <td>2026-02-04（HKD 2452.00）</td>
+            <td><a href="2026-02.html">查看</a></td>
+        </tr>
+    
+        <tr>
+            <td>2026-01</td>
+            <td>HKD 2791.8</td>
+            <td>10</td>
+            <td>HKD 279.18</td>
+            <td>2026-01-31（HKD 1249.80）</td>
+            <td><a href="2026-01.html">查看</a></td>
+        </tr>
+    
+        <tr>
+            <td>2025-12</td>
+            <td>HKD 14106.3</td>
+            <td>50</td>
+            <td>HKD 282.13</td>
+            <td>2025-12-01（HKD 2666.00）</td>
+            <td><a href="2025-12.html">查看</a></td>
+        </tr>
+    
+        <tr>
+            <td>2025-11</td>
+            <td>HKD 3315.9</td>
+            <td>14</td>
+            <td>HKD 236.85</td>
+            <td>2025-11-01（HKD 1234.90）</td>
+            <td><a href="2025-11.html">查看</a></td>
+        </tr>
+    
+        <tr>
+            <td>2025-10</td>
+            <td>HKD 2281.8</td>
+            <td>17</td>
+            <td>HKD 134.22</td>
+            <td>2025-10-26（HKD 1075.20）</td>
+            <td><a href="2025-10.html">查看</a></td>
+        </tr>
+    
+    </tbody>
+</table>
+</div>
+
+            </div>
+
+            <div class="mobile-only">
+                <div class="month-grid">
+                    
         <div class="month-card">
             <div class="month-card-header">
                 <h3>2026-04</h3>
@@ -424,6 +538,7 @@
             </div>
         </div>
     
+                </div>
             </div>
         </section>
 
