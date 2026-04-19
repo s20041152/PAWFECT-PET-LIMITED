@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>月報首頁</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
             background: linear-gradient(180deg, #fffaf5 0%, #f7f8fb 100%);
@@ -38,26 +41,33 @@
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
             padding: 24px;
+            overflow: hidden;
+        }
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
         }
         .report-table {
             width: 100%;
+            min-width: 760px;
             border-collapse: collapse;
             margin-top: 12px;
         }
-        .report-table th, .report-table td {
+        .report-table th,
+        .report-table td {
             border: 1px solid #e8e8e8;
             padding: 12px 14px;
+            text-align: center;
+            white-space: nowrap;
         }
         .report-table th {
             background: #c45d1b;
             color: white;
-            text-align: center;
         }
         .report-table tr:nth-child(even) {
             background: #fafafa;
-        }
-        .report-table td {
-            text-align: center;
         }
         .report-table a {
             color: #c45d1b;
@@ -73,6 +83,33 @@
             font-size: 0.9rem;
             padding: 20px 0 40px 0;
         }
+        @media (max-width: 768px) {
+            header {
+                padding: 24px 12px;
+            }
+            header h1 {
+                font-size: 1.75rem;
+            }
+            header h2 {
+                font-size: 1.15rem;
+            }
+            main {
+                margin: 16px auto;
+                padding: 0 12px 28px 12px;
+            }
+            .card {
+                padding: 16px;
+                border-radius: 14px;
+            }
+            .report-table {
+                min-width: 720px;
+            }
+            .report-table th,
+            .report-table td {
+                padding: 10px 12px;
+                font-size: 0.92rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -86,6 +123,7 @@
         <section class="card">
             <h2>每月報表總覽</h2>
             
+<div class="table-wrap">
 <table class="report-table">
     <thead>
         <tr>
@@ -164,6 +202,7 @@
     
     </tbody>
 </table>
+</div>
 
         </section>
     </main>

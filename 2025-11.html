@@ -7,6 +7,9 @@
     <title>2025-11 月度銷售報表</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
             background: linear-gradient(180deg, #fffaf5 0%, #f7f8fb 100%);
@@ -53,6 +56,7 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
             padding: 24px;
             margin-bottom: 24px;
+            overflow: hidden;
         }
         .card h2 {
             margin-top: 0;
@@ -92,16 +96,24 @@
             border-radius: 12px;
             padding: 8px;
         }
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
         .report-table {
             width: 100%;
+            min-width: 760px;
             border-collapse: collapse;
             margin-top: 12px;
             font-size: 0.95rem;
-            overflow: hidden;
         }
-        .report-table th, .report-table td {
+        .report-table th,
+        .report-table td {
             border: 1px solid #e8e8e8;
             padding: 10px 12px;
+            white-space: nowrap;
         }
         .report-table th {
             background: #c45d1b;
@@ -141,6 +153,43 @@
             }
             .chart-card {
                 height: 320px;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 24px 12px;
+            }
+            header h1 {
+                font-size: 1.75rem;
+            }
+            header h2 {
+                font-size: 1.15rem;
+            }
+            main {
+                margin: 16px auto;
+                padding: 0 12px 28px 12px;
+            }
+            .card {
+                padding: 16px;
+                border-radius: 14px;
+                margin-bottom: 16px;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .summary-box p {
+                font-size: 1.25rem;
+            }
+            .chart-card {
+                height: 280px;
+            }
+            .report-table {
+                min-width: 720px;
+                font-size: 0.9rem;
+            }
+            .report-table th,
+            .report-table td {
+                padding: 9px 10px;
             }
         }
     </style>
@@ -389,7 +438,7 @@
 
         <section class="card">
             <h2>每日營業額</h2>
-            <table class="dataframe report-table">
+            <div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Date</th>
@@ -424,12 +473,12 @@
       <td>367.2</td>
     </tr>
   </tbody>
-</table>
+</table></div>
         </section>
 
         <section class="card">
             <h2>商品銷量排行（按數量）</h2>
-            <table class="dataframe report-table">
+            <div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Product</th>
@@ -502,12 +551,12 @@
       <td>1.0</td>
     </tr>
   </tbody>
-</table>
+</table></div>
         </section>
 
         <section class="card">
             <h2>商品銷售排行（按銷售額）</h2>
-            <table class="dataframe report-table">
+            <div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Product</th>
@@ -580,12 +629,12 @@
       <td>83.0</td>
     </tr>
   </tbody>
-</table>
+</table></div>
         </section>
 
         <section class="card">
             <h2>分類排行（按數量）</h2>
-            <table class="dataframe report-table">
+            <div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Category</th>
@@ -622,12 +671,12 @@
       <td>1.0</td>
     </tr>
   </tbody>
-</table>
+</table></div>
         </section>
 
         <section class="card">
             <h2>分類排行（按銷售額）</h2>
-            <table class="dataframe report-table">
+            <div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Category</th>
@@ -664,12 +713,12 @@
       <td>98.0</td>
     </tr>
   </tbody>
-</table>
+</table></div>
         </section>
 
         <section class="card">
             <h2>商品完整明細</h2>
-            <table class="dataframe report-table">
+            <div class="table-wrap"><table class="dataframe report-table">
   <thead>
     <tr style="text-align: right;">
       <th>Item ID</th>
@@ -810,7 +859,7 @@
       <td>83.0</td>
     </tr>
   </tbody>
-</table>
+</table></div>
         </section>
 
         <section class="card">
