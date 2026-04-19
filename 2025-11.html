@@ -39,7 +39,13 @@ header h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+}
+.header-logo-badge {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 10px 12px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.14);
 }
 .header-logo {
     max-width: 110px;
@@ -215,11 +221,15 @@ header h2 {
     header h2 {
         font-size: 1.05rem;
     }
-    .header-logo {
-        max-width: 82px;
-    }
     .header-logo-wrap {
         margin-bottom: 6px;
+    }
+    .header-logo-badge {
+        padding: 8px 10px;
+        border-radius: 14px;
+    }
+    .header-logo {
+        max-width: 82px;
     }
     .last-updated {
         font-size: 0.8rem;
@@ -232,12 +242,14 @@ header h2 {
 <body>
     <header>
         <div class="header-logo-wrap">
-            <img src="logo.png" alt="PAWFECT Logo" class="header-logo">
+            <div class="header-logo-badge">
+                <img src="logo.png" alt="PAWFECT Logo" class="header-logo">
+            </div>
         </div>
         <h1>毛添加有限公司</h1>
         <h2>PAWFECT PET LIMITED</h2>
         <h2>2025-11 月度銷售報表</h2>
-        <p class="last-updated">Last updated: 2026-04-20 00:26</p>
+        <p class="last-updated">Last updated: 2026-04-20 00:31</p>
     </header>
 
     <main>
