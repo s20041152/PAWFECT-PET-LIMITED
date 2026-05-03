@@ -420,7 +420,7 @@ header h2 {
         <h1>毛添加有限公司</h1>
         <h2>PAWFECT PET LIMITED</h2>
         <h2>2026-05 月度銷售報表</h2>
-        <p class="last-updated">Last updated: 2026-05-03 12:42</p>
+        <p class="last-updated">Last updated: 2026-05-03 21:56</p>
     </header>
 
     <main>
@@ -433,19 +433,19 @@ header h2 {
             <div class="summary-grid">
                 <div class="summary-box">
                     <h3>本月總銷售額</h3>
-                    <p>HKD 5,289.40</p>
+                    <p>HKD 7,509.90</p>
                 </div>
                 <div class="summary-box">
                     <h3>總單數</h3>
-                    <p>28</p>
+                    <p>40</p>
                 </div>
                 <div class="summary-box">
                     <h3>平均每單金額</h3>
-                    <p>HKD 188.91</p>
+                    <p>HKD 187.75</p>
                 </div>
                 <div class="summary-box">
                     <h3>平均每日營業額</h3>
-                    <p>HKD 2,644.70</p>
+                    <p>HKD 2,503.30</p>
                 </div>
             </div>
         </section>
@@ -453,7 +453,7 @@ header h2 {
         <section class="card">
             <h2>重點分析</h2>
             <ul class="insight-list">
-                <li>最高營業額日期：2026-05-02（HKD 3,122.00）</li><li>平均每日營業額：HKD 2,644.70</li><li>平均每單金額：HKD 188.91</li><li>數量最多商品：本地新鮮馬鮫魚-60g（9 件）</li><li>銷售額最高商品：本地新鮮馬鮫魚-60g（HKD 1,260.00）</li><li>數量最多分類：海產（19 件）</li><li>銷售額最高分類：海產（HKD 2,816.00）</li>
+                <li>最高營業額日期：2026-05-02（HKD 3,122.00）</li><li>平均每日營業額：HKD 2,503.30</li><li>平均每單金額：HKD 187.75</li><li>數量最多商品：本地新鮮馬鮫魚-60g（9 件）</li><li>銷售額最高商品：本地新鮮馬鮫魚-60g（HKD 1,260.00）</li><li>數量最多分類：海產（26 件）</li><li>銷售額最高分類：海產（HKD 3,794.00）</li>
             </ul>
         </section>
 
@@ -467,10 +467,10 @@ header h2 {
         new Chart(document.getElementById('dailyChart_2026_05'), {
             type: 'bar',
             data: {
-                labels: ["2026-05-01", "2026-05-02"],
+                labels: ["2026-05-01", "2026-05-02", "2026-05-03"],
                 datasets: [{
                     label: "每日營業額",
-                    data: [2167.4, 3122.0],
+                    data: [2167.4, 3122.0, 2220.5],
                     backgroundColor: '#c45d1b',
                     borderRadius: 8,
                     borderSkipped: false
@@ -527,10 +527,10 @@ header h2 {
         new Chart(document.getElementById('productQtyChart_2026_05'), {
             type: 'bar',
             data: {
-                labels: ["本地新鮮馬鮫魚-60g", "凍乾豬片", "鵪鶉髀", "凍乾紅蝦", "南非鱷魚手s", "凍乾雞心", "凍乾原條雞柳", "凍乾白飯魚", "凍乾海鱸魚", "凍乾魷魚"],
+                labels: ["本地新鮮馬鮫魚-60g", "凍乾豬片", "鵪鶉髀", "凍乾紅蝦", "凍乾魷魚", "南非鱷魚手s", "凍乾白飯魚", "凍乾海鱸魚", "凍乾雞心", "凍乾鹿肉"],
                 datasets: [{
                     label: "商品銷量 Top 10",
-                    data: [9.0, 7.0, 5.0, 4.0, 4.0, 3.0, 2.0, 2.0, 2.0, 2.0],
+                    data: [9.0, 9.0, 6.0, 5.0, 5.0, 4.0, 4.0, 3.0, 3.0, 2.0],
                     backgroundColor: '#3b82f6',
                     borderRadius: 8,
                     borderSkipped: false
@@ -582,10 +582,10 @@ header h2 {
         new Chart(document.getElementById('productSalesChart_2026_05'), {
             type: 'bar',
             data: {
-                labels: ["本地新鮮馬鮫魚-60g", "凍乾紅蝦", "凍乾豬片", "鵪鶉髀", "凍乾雞心", "凍乾魷魚", "凍乾鹿肉", "南非鱷魚手s", "凍乾原條雞柳", "凍乾海鱸魚"],
+                labels: ["本地新鮮馬鮫魚-60g", "凍乾紅蝦", "凍乾豬片", "凍乾魷魚", "鵪鶉髀", "泰國鱷魚肉粒", "凍乾白飯魚", "凍乾海鱸魚", "凍乾雞心", "凍乾鹿肉"],
                 datasets: [{
                     label: "商品銷售額 Top 10",
-                    data: [1260.0, 840.0, 686.0, 625.0, 324.0, 320.0, 300.0, 240.0, 216.0, 216.0],
+                    data: [1260.0, 1050.0, 882.0, 800.0, 750.0, 400.0, 360.0, 324.0, 324.0, 300.0],
                     backgroundColor: '#10b981',
                     borderRadius: 8,
                     borderSkipped: false
@@ -643,10 +643,10 @@ header h2 {
         new Chart(document.getElementById('categoryQtyChart_2026_05'), {
             type: 'bar',
             data: {
-                labels: ["海產", "豬", "雞", "鵪鶉", "鱷魚", "其他", "牛"],
+                labels: ["海產", "豬", "鱷魚", "雞", "鵪鶉", "其他", "牛"],
                 datasets: [{
                     label: "分類銷量排行",
-                    data: [19.0, 7.0, 6.0, 5.0, 4.0, 2.0, 1.0],
+                    data: [26.0, 11.0, 8.0, 7.0, 6.0, 4.0, 2.0],
                     backgroundColor: '#8b5cf6',
                     borderRadius: 8,
                     borderSkipped: false
@@ -698,10 +698,10 @@ header h2 {
         new Chart(document.getElementById('categorySalesChart_2026_05'), {
             type: 'bar',
             data: {
-                labels: ["海產", "豬", "雞", "鵪鶉", "其他", "鱷魚", "牛"],
+                labels: ["海產", "豬", "鱷魚", "鵪鶉", "雞", "其他", "牛"],
                 datasets: [{
                     label: "分類銷售額排行",
-                    data: [2816.0, 686.0, 626.0, 625.0, 300.0, 240.0, 124.0],
+                    data: [3794.0, 982.0, 806.0, 750.0, 712.0, 484.0, 204.0],
                     backgroundColor: '#ef4444',
                     borderRadius: 8,
                     borderSkipped: false
@@ -769,6 +769,11 @@ header h2 {
       <td>15</td>
       <td>3,122.00</td>
     </tr>
+    <tr>
+      <td>2026-05-03</td>
+      <td>12</td>
+      <td>2,220.50</td>
+    </tr>
   </tbody>
 </table></div></div>
         </section>
@@ -789,42 +794,54 @@ header h2 {
     </tr>
     <tr>
       <td>凍乾豬片</td>
-      <td>7</td>
+      <td>9</td>
     </tr>
     <tr>
       <td>鵪鶉髀</td>
-      <td>5</td>
+      <td>6</td>
     </tr>
     <tr>
       <td>凍乾紅蝦</td>
-      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>凍乾魷魚</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>南非鱷魚手s</td>
       <td>4</td>
     </tr>
     <tr>
+      <td>凍乾白飯魚</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>凍乾海鱸魚</td>
+      <td>3</td>
+    </tr>
+    <tr>
       <td>凍乾雞心</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <td>凍乾鹿肉</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>凍乾原條雞柳</td>
       <td>2</td>
     </tr>
     <tr>
-      <td>凍乾白飯魚</td>
+      <td>凍乾無激素雞柳粒</td>
       <td>2</td>
     </tr>
     <tr>
-      <td>凍乾海鱸魚</td>
+      <td>泰國鱷魚肉粒</td>
       <td>2</td>
     </tr>
     <tr>
-      <td>凍乾魷魚</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>凍乾鹿肉</td>
+      <td>南非鱷魚手m</td>
       <td>2</td>
     </tr>
     <tr>
@@ -832,7 +849,23 @@ header h2 {
       <td>1</td>
     </tr>
     <tr>
-      <td>凍乾無激素雞柳粒</td>
+      <td>凍乾袋鼠肉</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>凍乾豬肝</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>凍乾豬片 10g</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>凍乾牛肝粒</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>凍乾鹿肉 10g</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -855,23 +888,35 @@ header h2 {
     </tr>
     <tr>
       <td>凍乾紅蝦</td>
-      <td>840.00</td>
+      <td>1,050.00</td>
     </tr>
     <tr>
       <td>凍乾豬片</td>
-      <td>686.00</td>
+      <td>882.00</td>
+    </tr>
+    <tr>
+      <td>凍乾魷魚</td>
+      <td>800.00</td>
     </tr>
     <tr>
       <td>鵪鶉髀</td>
-      <td>625.00</td>
+      <td>750.00</td>
+    </tr>
+    <tr>
+      <td>泰國鱷魚肉粒</td>
+      <td>400.00</td>
+    </tr>
+    <tr>
+      <td>凍乾白飯魚</td>
+      <td>360.00</td>
+    </tr>
+    <tr>
+      <td>凍乾海鱸魚</td>
+      <td>324.00</td>
     </tr>
     <tr>
       <td>凍乾雞心</td>
       <td>324.00</td>
-    </tr>
-    <tr>
-      <td>凍乾魷魚</td>
-      <td>320.00</td>
     </tr>
     <tr>
       <td>凍乾鹿肉</td>
@@ -886,20 +931,36 @@ header h2 {
       <td>216.00</td>
     </tr>
     <tr>
-      <td>凍乾海鱸魚</td>
-      <td>216.00</td>
+      <td>凍乾無激素雞柳粒</td>
+      <td>172.00</td>
     </tr>
     <tr>
-      <td>凍乾白飯魚</td>
-      <td>180.00</td>
+      <td>南非鱷魚手m</td>
+      <td>166.00</td>
+    </tr>
+    <tr>
+      <td>凍乾袋鼠肉</td>
+      <td>156.00</td>
     </tr>
     <tr>
       <td>凍乾牛牛(牛冧)</td>
       <td>124.00</td>
     </tr>
     <tr>
-      <td>凍乾無激素雞柳粒</td>
-      <td>86.00</td>
+      <td>凍乾牛肝粒</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <td>凍乾豬肝</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <td>凍乾鹿肉 10g</td>
+      <td>28.00</td>
+    </tr>
+    <tr>
+      <td>凍乾豬片 10g</td>
+      <td>20.00</td>
     </tr>
   </tbody>
 </table></div></div>
@@ -917,31 +978,31 @@ header h2 {
   <tbody>
     <tr>
       <td>海產</td>
-      <td>19</td>
+      <td>26</td>
     </tr>
     <tr>
       <td>豬</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>雞</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>鵪鶉</td>
-      <td>5</td>
+      <td>11</td>
     </tr>
     <tr>
       <td>鱷魚</td>
-      <td>4</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>雞</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>鵪鶉</td>
+      <td>6</td>
     </tr>
     <tr>
       <td>其他</td>
-      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>牛</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table></div></div>
@@ -959,31 +1020,31 @@ header h2 {
   <tbody>
     <tr>
       <td>海產</td>
-      <td>2,816.00</td>
+      <td>3,794.00</td>
     </tr>
     <tr>
       <td>豬</td>
-      <td>686.00</td>
-    </tr>
-    <tr>
-      <td>雞</td>
-      <td>626.00</td>
-    </tr>
-    <tr>
-      <td>鵪鶉</td>
-      <td>625.00</td>
-    </tr>
-    <tr>
-      <td>其他</td>
-      <td>300.00</td>
+      <td>982.00</td>
     </tr>
     <tr>
       <td>鱷魚</td>
-      <td>240.00</td>
+      <td>806.00</td>
+    </tr>
+    <tr>
+      <td>鵪鶉</td>
+      <td>750.00</td>
+    </tr>
+    <tr>
+      <td>雞</td>
+      <td>712.00</td>
+    </tr>
+    <tr>
+      <td>其他</td>
+      <td>484.00</td>
     </tr>
     <tr>
       <td>牛</td>
-      <td>124.00</td>
+      <td>204.00</td>
     </tr>
   </tbody>
 </table></div></div>
@@ -1016,24 +1077,48 @@ header h2 {
       <td>凍乾紅蝦</td>
       <td>海產</td>
       <td>210.00</td>
-      <td>4</td>
-      <td>840.00</td>
+      <td>5</td>
+      <td>1,050.00</td>
     </tr>
     <tr>
       <td>p2</td>
       <td>凍乾豬片</td>
       <td>豬</td>
       <td>98.00</td>
-      <td>7</td>
-      <td>686.00</td>
+      <td>9</td>
+      <td>882.00</td>
+    </tr>
+    <tr>
+      <td>s8</td>
+      <td>凍乾魷魚</td>
+      <td>海產</td>
+      <td>160.00</td>
+      <td>5</td>
+      <td>800.00</td>
     </tr>
     <tr>
       <td>b1_1</td>
       <td>鵪鶉髀</td>
       <td>鵪鶉</td>
       <td>125.00</td>
-      <td>5</td>
-      <td>625.00</td>
+      <td>6</td>
+      <td>750.00</td>
+    </tr>
+    <tr>
+      <td>o4</td>
+      <td>泰國鱷魚肉粒</td>
+      <td>鱷魚</td>
+      <td>200.00</td>
+      <td>2</td>
+      <td>400.00</td>
+    </tr>
+    <tr>
+      <td>s9</td>
+      <td>凍乾白飯魚</td>
+      <td>海產</td>
+      <td>90.00</td>
+      <td>4</td>
+      <td>360.00</td>
     </tr>
     <tr>
       <td>c3</td>
@@ -1044,12 +1129,12 @@ header h2 {
       <td>324.00</td>
     </tr>
     <tr>
-      <td>s8</td>
-      <td>凍乾魷魚</td>
+      <td>s6</td>
+      <td>凍乾海鱸魚</td>
       <td>海產</td>
-      <td>160.00</td>
-      <td>2</td>
-      <td>320.00</td>
+      <td>108.00</td>
+      <td>3</td>
+      <td>324.00</td>
     </tr>
     <tr>
       <td>o3</td>
@@ -1076,20 +1161,28 @@ header h2 {
       <td>216.00</td>
     </tr>
     <tr>
-      <td>s6</td>
-      <td>凍乾海鱸魚</td>
-      <td>海產</td>
-      <td>108.00</td>
+      <td>c1</td>
+      <td>凍乾無激素雞柳粒</td>
+      <td>雞</td>
+      <td>86.00</td>
       <td>2</td>
-      <td>216.00</td>
+      <td>172.00</td>
     </tr>
     <tr>
-      <td>s9</td>
-      <td>凍乾白飯魚</td>
-      <td>海產</td>
-      <td>90.00</td>
+      <td>b4</td>
+      <td>南非鱷魚手m</td>
+      <td>鱷魚</td>
+      <td>83.00</td>
       <td>2</td>
-      <td>180.00</td>
+      <td>166.00</td>
+    </tr>
+    <tr>
+      <td>o2</td>
+      <td>凍乾袋鼠肉</td>
+      <td>其他</td>
+      <td>156.00</td>
+      <td>1</td>
+      <td>156.00</td>
     </tr>
     <tr>
       <td>cow1</td>
@@ -1100,12 +1193,36 @@ header h2 {
       <td>124.00</td>
     </tr>
     <tr>
-      <td>c1</td>
-      <td>凍乾無激素雞柳粒</td>
-      <td>雞</td>
-      <td>86.00</td>
+      <td>cow4</td>
+      <td>凍乾牛肝粒</td>
+      <td>牛</td>
+      <td>80.00</td>
       <td>1</td>
-      <td>86.00</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <td>p3</td>
+      <td>凍乾豬肝</td>
+      <td>豬</td>
+      <td>80.00</td>
+      <td>1</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <td>o6</td>
+      <td>凍乾鹿肉 10g</td>
+      <td>其他</td>
+      <td>28.00</td>
+      <td>1</td>
+      <td>28.00</td>
+    </tr>
+    <tr>
+      <td>p4</td>
+      <td>凍乾豬片 10g</td>
+      <td>豬</td>
+      <td>20.00</td>
+      <td>1</td>
+      <td>20.00</td>
     </tr>
   </tbody>
 </table></div></div>
